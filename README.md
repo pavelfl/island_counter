@@ -37,11 +37,19 @@ Large or deeply connected grids can exhaust it, so the iterative version is safe
 
 A recursive version is included as a reference.
 
+
+## Python version
+
+The utility was tested with **Python 3.12**, and this is the recommended version to use.
+Other recent Python 3 versions should work as well, but 3.12 is the one this project was verified with.
+
+
 ## Installing Python (Windows 11)
 
 1. Download from: https://www.python.org/downloads/windows/
 2. During installation check: “Add Python to PATH”
 3. Verify with: python --version
+
 
 ## Running the utility
 
