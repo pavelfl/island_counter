@@ -1,10 +1,10 @@
 import copy
 from island_counter import count_islands
 
-def clone(g):
-    return copy.deepcopy(g)
+def clone(grid):
+    return copy.deepcopy(grid)
 
-def test_simple():
+def test_small_diagonal():
     grid = clone([
         [True, False],
         [False, True],

@@ -21,22 +21,43 @@ grid = [
 
 The idea is simple:
 - Walk through the grid.
-- When we hit a `True`, that’s the start of an island.
+- When a `True` cell appears, that’s the start of an island.
 - Explore everything connected to it using DFS (depth-first search).
 - Mark visited cells so they aren’t counted twice.
 
-The main implementation uses iterative DFS (explicit stack) since Python’s recursion
-limit can be hit on large or deep grids. A recursive version is included as reference.
+### What is DFS (depth-first search)?
 
-## Run
+DFS explores in depth first — follow one path as far as it goes, then backtrack.
 
-    python island_counter.py
+### Why iterative DFS?
 
-## Tests
+Iterative DFS (depth-first search) uses a normal list as a stack.  
+Recursion depends on the call stack, which has a finite depth.  
+Large or deeply connected grids can exhaust it, so the iterative version is safer.
 
-    pip install pytest
-    pytest
+A recursive version is included as a reference.
+
+## Installing Python (Windows 11)
+
+1. Download from: https://www.python.org/downloads/windows/
+2. During installation check: “Add Python to PATH”
+3. Verify with: python --version
+
+## Running the utility
+
+python island_counter.py
+
+Virtual environment (optional):
+python -m venv .venv
+.\.venv\Scripts\activate
+python island_counter.py
+
+## Running the tests
+
+pip install pytest
+pytest
 
 ## Notes
 - The function modifies the grid in place.
 - Pass a copy if you need to keep the original.
+- Both DFS (depth-first search) versions work the same; the iterative one is safer for big grids.

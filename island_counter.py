@@ -8,12 +8,15 @@ NEIGHBOUR_OFFSETS = [
 ]
 
 def count_islands(grid: List[List[bool]]) -> int:
+    """Count the number of 8-connected islands using iterative DFS (depth-first search)."""
+
     if not grid or not grid[0]:
         return 0
 
     rows, cols = len(grid), len(grid[0])
 
     def flood(start_r: int, start_c: int) -> None:
+        """Flood-fill using iterative DFS (depth-first search)."""
         stack = [(start_r, start_c)]
         grid[start_r][start_c] = False
 
@@ -35,6 +38,8 @@ def count_islands(grid: List[List[bool]]) -> int:
     return count
 
 def count_islands_recursive(grid: List[List[bool]]) -> int:
+    """Recursive DFS (depth-first search). May fail on large inputs due to call stack limits."""
+
     if not grid or not grid[0]:
         return 0
 
